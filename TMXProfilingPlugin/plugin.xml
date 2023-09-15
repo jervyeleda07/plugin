@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-threatmetrix" version="0.0.1">
+    <name>TMXProfiling</name>
+
+    <description>An Android Cordova plugin that allows users to utilise ThreatMetrix technologies.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,tmxprofilingplugin,threatmetrix</keywords>
+    <repo>https://github.com/nolialbay/cordova-threatmetrix-tmxprofilingtest.git</repo>
+    <issue></issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/TMXProfilingPlugin.js" name="TMXProfilingPlugin">
+        <clobbers target="window.plugins.TMXProfilingPlugin" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="TMXProfilingPlugin">
+                <param name="android-package" value="com.threatmetrix.cordova.plugin.TMXProfilingPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/TMXProfilingPlugin.java" target-dir="src/com/threatmetrix/cordova/plugin" />
+        <resource-file src="src/android/libs/TMXProfiling-7.1-44.aar" target="libs/TMXProfiling-7.1-44.aar" />
+        <resource-file src="src/android/libs/TMXProfilingConnections-7.1-44.aar" target="libs/TMXProfilingConnections-7.1-44.aar" />
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+    </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="TMXProfilingPlugin">
+                <param name="ios-package" value="CDVTMXProfilingPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/CDVTMXProfilingPlugin.h" />
+        <source-file src="src/ios/CDVTMXProfilingPlugin.mm" />
+        <header-file src="src/ios/LBProfilingConnections.h" />
+        <source-file src="src/ios/LBProfilingConnections.mm" />
+        <header-file src="src/ios/TMXProfilingConnectionsProtocol.h" />
+        <!-- <resource-file src="src/ios/TMXProfiling.framework" target="TMXProfiling.framework" /> -->
+        <framework src="src/ios/TMXProfiling.framework" custom="true" />
+        <!-- <resource-file src="src/ios/TMXProfilingConnections.framework" target="TMXProfilingConnections.framework" /> -->
+        <framework src="src/ios/TMXProfilingConnections.framework" custom="true" />
+    </platform>
+</plugin>

@@ -1,0 +1,35 @@
+{
+    "name": "cordova-plugin-threatmetrix",
+    "version": "0.0.1",
+    "description": "An Android Cordova plugin that allows users to utilise ThreatMetrix technologies.",
+    "cordova": {
+      "id": "cordova-plugin-threatmetrix",
+      "platforms": [
+        "android",
+        "ios"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/nolialbay/cordova-threatmetrix-tmxprofilingtest.git"
+    },
+    "keywords": [
+      "ThreatMetrix",
+      "TrustDefender",
+      "ecosystem:cordova",
+      "cordova-android"
+    ],
+    "engines": [
+      {
+        "name": "cordova",
+        "version": ">=3.0.0"
+      }
+    ],
+    "author": "Silver Wu<swu@threatmetrix.com>",
+    "license": "MIT",
+    "bugs": {
+      "url": ""
+    },
+    "homepage": ""
+  }
+  
